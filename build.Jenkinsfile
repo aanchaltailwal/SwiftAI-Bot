@@ -75,7 +75,7 @@ pipeline {
         stage('Trigger Deploy') {
         	steps {
         		build job: 'SwiftAI_Deploy', wait: false, parameters: [
-            	string(name: 'YOLO5_IMAGE_URL', value: "${ECR_REGISTRY_URL}/abhishekc-yolo5:${DOCKER_IMAGE_TAG}")
+            	string(name: 'DOCKER_TAG', value: "${DOCKER_IMAGE_TAG}")
         		]
     		}
 		}

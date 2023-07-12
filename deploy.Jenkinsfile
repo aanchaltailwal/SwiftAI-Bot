@@ -2,12 +2,13 @@ pipeline {
     agent any
 
     
-    parameters { string(name: 'YOLO5_IMAGE_URL', defaultValue: '', description: '') }
+    parameters { string(name: 'DOCKER_TAG', defaultValue: '', description: '') }
     
     environment {
         AWS_REGION_K8S = 'us-east-2'
         K8S_CLUSTER_NAME = 'k8s-batch1'
         K8S_NAMESPACE = 'abhishekc-ns'
+        IMAGE_VERSION = ${DOCKER_TAG}
     }
     
     stages {
