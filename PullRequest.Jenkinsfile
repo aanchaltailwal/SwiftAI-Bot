@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo "Running Black Linitng"
                 sh 'pip install black'
-                sh 'black .'
+                sh '/var/lib/jenkins/.local/bin/black .'
             }
         }
     }
