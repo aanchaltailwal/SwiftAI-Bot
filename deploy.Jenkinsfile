@@ -8,7 +8,7 @@ pipeline {
         AWS_REGION_K8S = 'us-east-2'
         K8S_CLUSTER_NAME = 'k8s-batch1'
         K8S_NAMESPACE = 'abhishekc-ns'
-        IMAGE_VERSION = ${DOCKER_TAG}
+        IMAGE_VERSION = "${DOCKER_TAG}"
     }
     
     stages {
