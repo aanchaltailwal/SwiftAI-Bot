@@ -105,6 +105,7 @@ def handle_sigterm(signum, frame):
     is_ready = False
 
 
+
 signal.signal(signal.SIGTERM, handle_sigterm)
 
 if __name__ == "__main__":
