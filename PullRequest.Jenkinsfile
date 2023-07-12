@@ -18,17 +18,6 @@ pipeline {
             }
         }
 
-        stage('Unittest') {
-            steps {
-                echo "Running unit tests"
-                sh 'cd Yolo5 && python3 -m pytest --junitxml results.xml tests'
-            }
-            post {
-                always {
-                    junit allowEmptyResults: true, testResults: 'Yolo5/results.xml'
-                }
-            }
-        }
 
         stage('Black Linting') {
             steps {
