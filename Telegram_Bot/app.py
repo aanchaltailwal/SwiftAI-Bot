@@ -181,7 +181,7 @@ class ObjectDetectionBot(Bot):
             for element, count in aggregated_predictions.items():
                 summary += f"{element}\n"
 
-            self.send_text_with_quote(summary)
+            self.send_text_with_quote(summary, message_id=self.current_msg.message_id)
 
             # Delete the video file
             os.remove(video_path)
