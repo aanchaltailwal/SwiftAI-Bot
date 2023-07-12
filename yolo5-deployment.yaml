@@ -23,6 +23,19 @@ spec:
               cpu: 1000m
             requests:
               cpu: 500m
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8081
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /status
+              port: 8081
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
 
 ---
 apiVersion: autoscaling/v2
