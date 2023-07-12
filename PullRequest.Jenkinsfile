@@ -6,7 +6,7 @@ pipeline {
         stage('Safety Check') {
             steps {
                 sh 'pip install safety'
-                sh 'cd Yolo5 && safety check -r requirements.txt'
+                sh 'cd Yolo5 && /var/lib/jenkins/.local/bin/safety check -r requirements.txt'
             }
         }
 
