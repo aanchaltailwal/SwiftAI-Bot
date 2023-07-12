@@ -52,7 +52,7 @@ pipeline {
         
         stage('Trigger Deploy') {
         	steps {
-        		build job: 'Yolo5-Deploy', wait: false, parameters: [
+        		build job: 'SwiftAI_Deploy', wait: false, parameters: [
             	string(name: 'YOLO5_IMAGE_URL', value: "${ECR_REGISTRY_URL}/abhishekc-yolo5:${DOCKER_IMAGE_TAG}")
         		]
     		}
