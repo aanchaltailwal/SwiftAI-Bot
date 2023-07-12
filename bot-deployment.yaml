@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegram-bot
+  template:
+    metadata:
+      labels:
+        app: telegram-bot
+    spec:
+      containers:
+        - name: telegram-bot
+          image: 854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-tg-bot:0.0.5
+          env:
+            - name: _token
+              valueFrom:
+                secretKeyRef:
+                  name: telegram-token-secret
+                  key: telegram-token.txt
+            - name: openAi_key
+              valueFrom:
+                secretKeyRef:
+                  name: openai-key-secret
+                  key: openai_key.txt
