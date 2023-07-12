@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: yolo5
-          image: 854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-yolo5:${DOCKER_IMAGE_TAG}
+          image: "854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-yolo5:${DOCKER_IMAGE_TAG}"
           imagePullPolicy: Always
           ports:
             - containerPort: 8081
