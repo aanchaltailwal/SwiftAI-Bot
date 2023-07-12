@@ -10,3 +10,4 @@ class TestBacklogPerInstanceMetric(unittest.TestCase):
     def test_invalid_filename(self):
         self.assertFalse(allowed_file(f"file"))
         self.assertFalse(allowed_file(f"file.csv"))
+
