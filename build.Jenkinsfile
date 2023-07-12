@@ -40,8 +40,8 @@ pipeline {
             steps {
 
                 sh '''
-                docker tag abhishekc-yolo5:latest ${ECR_REGISTRY_URL}/abhishekc-yolo5:${DOCKER_IMAGE_TAG}
-                docker push ${ECR_REGISTRY_URL}/abhishekc-yolo5:${DOCKER_IMAGE_TAG}
+                docker tag abhishekc-yolo5:latest ${ECR_REGISTRY_URL}/abhishekc-yolo5:latest
+                docker push ${ECR_REGISTRY_URL}/abhishekc-yolo5:latest
                 '''
 
             }
@@ -64,8 +64,8 @@ pipeline {
             steps {
 
                 sh '''
-                docker tag abhishekc-tg-bot:latest ${ECR_REGISTRY_URL}/abhishekc-tg-bot:${DOCKER_IMAGE_TAG}
-                docker push ${ECR_REGISTRY_URL}/abhishekc-tg-bot:${DOCKER_IMAGE_TAG}
+                docker tag abhishekc-tg-bot:latest ${ECR_REGISTRY_URL}/abhishekc-tg-bot:latest
+                docker push ${ECR_REGISTRY_URL}/abhishekc-tg-bot:latest
                 '''
             }
         }
