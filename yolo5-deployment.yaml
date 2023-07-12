@@ -20,9 +20,9 @@ spec:
             - containerPort: 8081
           resources:
             limits:
-              cpu: 1000
+              cpu: 1000Mi
             requests:
-              cpu: 1000
+              cpu: 1000Mi
 
 ---
 apiVersion: autoscaling/v2
@@ -42,4 +42,4 @@ spec:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 500
+          averageUtilization: 50
