@@ -5,22 +5,8 @@ pipeline {
 
         stage('Safety Check') {
             steps {
-                script {
-                    def vulnerabilities = sh(
-                        returnStdout: true,
-                        script: '''
-                            pip install safety
-                            cd Yolo5 && safety check --file requirements.txt --json
-                        '''
-                    ).trim()
-
-                    def json = readJSON text: vulnerabilities
-
-                    // Fail the build if any vulnerabilities are found
-                    if (json.vulnerabilities) {
-                        error("Security vulnerabilities found. Failing the build.")
-                    }
-                }
+                sh 'pip install safety'
+                sh 'cd Yolo5 && safety check -r requirements.txt'
             }
         }
 
