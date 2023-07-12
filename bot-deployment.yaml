@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: telegram-bot
-          image: 854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-tg-bot:${IMAGE_VERSION}
+          image: 854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-tg-bot:"${IMAGE_VERSION}"
           env:
             - name: _token
               valueFrom:

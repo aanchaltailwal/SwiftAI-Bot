@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: yolo5
-          image: 854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-yolo5:${IMAGE_VERSION}
+          image: 854171615125.dkr.ecr.eu-north-1.amazonaws.com/abhishekc-yolo5:"${IMAGE_VERSION}"
           imagePullPolicy: Always
           ports:
             - containerPort: 8081
