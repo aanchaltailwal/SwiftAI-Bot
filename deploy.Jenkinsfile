@@ -34,11 +34,22 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Deploy Yolo5') {
             steps {
-                
             	sh 'kubectl apply -f yolo5-deployment.yaml --namespace abhishekc-ns'
         
+            }
+        }
+
+        stage('Deploy Yolo5 Service') {
+            steps {
+                sh 'kubectl apply -f yolo5-service.yaml --namespace abhishekc-ns'
+            }
+        }
+
+        stage('Deploy Telegram_Bot') {
+            steps {
+                sh 'kubectl apply -f bot-deployment.yaml --namespace abhishekc-ns'
             }
         }
     }

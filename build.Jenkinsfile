@@ -47,6 +47,28 @@ pipeline {
             }
 
         }
+
+
+        stage('Build Telegram Bot') {
+
+            steps {
+
+                sh 'docker build -t abhishekc-tg-bot ./Telegram_Bot'
+
+            }
+        }
+
+
+        stage('Push Telegram_Bot to ECR') {
+
+            steps {
+
+                sh '''
+                docker tag abhishekc-tg-bot:latest ${ECR_REGISTRY_URL}/abhishekc-tg-bot:${DOCKER_IMAGE_TAG}
+                docker push ${ECR_REGISTRY_URL}/abhishekc-tg-bot:${DOCKER_IMAGE_TAG}
+                '''
+            }
+        }
         
         
         
