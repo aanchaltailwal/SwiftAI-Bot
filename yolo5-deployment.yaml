@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: yolo5-deployment
+  annotations:
+    kubernetes.io/change-cause: "Updated"
+
 spec:
   replicas: 1
   selector:
