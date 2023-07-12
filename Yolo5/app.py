@@ -97,7 +97,7 @@ def upload_file_api():
 
 @app.route("/status")
 def status():
-    return "OK! "
+    return "Server is Working."
 
 
 def handle_sigterm(signum, frame):
