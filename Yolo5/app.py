@@ -97,12 +97,13 @@ def upload_file_api():
 
 @app.route("/status")
 def status():
-    return "Server is Working."
+    return "\nServer is OK.!!"
 
 
 def handle_sigterm(signum, frame):
     global is_ready
     is_ready = False
+
 
 
 signal.signal(signal.SIGTERM, handle_sigterm)
